@@ -1,9 +1,6 @@
-class PagesController < ApplicationController
-  def index
-    # Your code here
-    respond_to do |format|
-      format.html { head :no_content } # or render an appropriate template
-      format.json { render json: { message: 'No Content' }, status: :no_content }
-    end
+def index
+  # Your logic here
+  respond_to do |format|
+    format.html # Render HTML template
   end
 end

@@ -8,12 +8,13 @@ services:
       - .:/app
     depends_on:
       - db
-    env_file:
-      - .env
-    command: bundle exec rails s
+    environment:
+      - DATABASE_URL=postgres://myuser:mypostgrespassword@db/open-flights_development
   db:
     image: postgres:14.1
     volumes:
       - ./pgdata:/var/lib/postgresql/data
-    env_file:
-      - .env
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypostgrespassword
+      - POSTGRES_DB=open-flights_development

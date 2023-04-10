@@ -15,6 +15,6 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=open-flights
+      - POSTGRES_USER=myuser
       - POSTGRES_PASSWORD=mypostgrespassword
       - POSTGRES_DB=open-flights_production

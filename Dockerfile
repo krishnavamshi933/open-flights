@@ -14,7 +14,7 @@ RUN bundle install
 COPY . .
 
 # Run database migrations
-RUN bundle exec rails db:prepare
+
 
 # Install Node.js dependencies
 RUN apt-get update && apt-get install -y nodejs

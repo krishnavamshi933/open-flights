@@ -10,6 +10,11 @@ services:
       - db
     environment:
       - RAILS_ENV=development
+      - POSTGRES_USER=open-flights
+      - POSTGRES_PASSWORD=mypostgrespassword
+      - POSTGRES_DB=open-flights_production
+      - DB_HOST=db
+      - DB_PORT=5432
   db:
     image: postgres:14.1
     volumes:

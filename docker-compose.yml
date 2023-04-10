@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    env_file:
+      - .env
+    command: bundle exec rails s
+  db:
+    image: postgres:14.1
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env

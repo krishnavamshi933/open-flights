@@ -17,4 +17,4 @@ services:
     environment:
       - POSTGRES_USER=open-flights
       - POSTGRES_PASSWORD=mypostgrespassword
-      - POSTGRES_DB=open-flights_production
+      - POSTGRES_DB=open-flights_development

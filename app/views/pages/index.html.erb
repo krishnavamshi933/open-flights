@@ -1,0 +1,8 @@
+class PagesController < ApplicationController
+  def index
+    respond_to do |format|
+      format.html { render 'index' } # Add this line to handle text/html requests
+      format.json { render json: { message: 'Welcome to the API' } }
+    end
+  end
+end

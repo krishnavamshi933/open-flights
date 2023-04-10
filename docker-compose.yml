@@ -11,7 +11,7 @@ services:
     environment:
       - RAILS_ENV=development
       - DB_HOST=db
-      - DB_USER=myuser
+      - DB_USER=open-flights
       - DB_PASSWORD=mypassword
       - DB_NAME=open-flights_development
   db:
@@ -19,6 +19,6 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=myuser
+      - POSTGRES_USER=open-flights
       - POSTGRES_PASSWORD=mypassword
       - POSTGRES_DB=open-flights_development

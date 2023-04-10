@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://myuser:mypostgrespassword@db/open-flights_production
+      - DATABASE_URL=postgres://myuser:mypostgrespassword@db/test
   db:
     image: postgres:14.1
     volumes:
@@ -17,4 +17,4 @@ services:
     environment:
       - POSTGRES_USER=open-flights
       - POSTGRES_PASSWORD=mypostgrespassword
-      - POSTGRES_DB=open-flights_production
+      - POSTGRES_DB=test

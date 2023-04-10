@@ -17,7 +17,7 @@ COPY . .
 RUN bundle exec rails db:prepare
 
 # Install Node.js dependencies
-RUN npm install
+RUN apt-get update && apt-get install -y nodejs
 
 # Expose the port on which the application will run
 EXPOSE 3000

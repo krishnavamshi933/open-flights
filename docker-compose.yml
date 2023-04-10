@@ -9,12 +9,12 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://myuser:mypostgrespassword@db/open-flights_development
+      - DATABASE_URL=postgres://myuser:mypostgrespassword@db/open-flights_production
   db:
     image: postgres:14.1
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=myuser
+      - POSTGRES_USER=open-flights
       - POSTGRES_PASSWORD=mypostgrespassword
       - POSTGRES_DB=open-flights_development

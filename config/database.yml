@@ -2,11 +2,23 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV["POSTGRES_USER"] || 'open-flights' %>
-  password: <%= ENV["POSTGRES_PASSWORD"] || 'mypassword' %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
   host: <%= ENV["DB_HOST"] %>
   port: <%= ENV.fetch("DB_PORT") { 5432 } %>
 
 development:
   <<: *default
-  database: open-flights_development
+  database: <%= ENV["DB_NAME"] %>
+
+test:
+  <<: *default
+  database: open-flights_test
+
+production:
+  <<: *default
+  database: open-flights_production
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>

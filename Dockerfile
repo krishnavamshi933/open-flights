@@ -15,7 +15,6 @@ COPY . .
 
 # Run database migrations
 
-
 # Install Node.js dependencies
 RUN apt-get update && apt-get install -y nodejs
 
